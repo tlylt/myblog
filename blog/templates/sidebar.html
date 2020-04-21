@@ -1,0 +1,95 @@
+{% load blog_tags %}
+<div class="inner">
+  <!-- Search Future TODO-->
+  <!-- <section id="search" class="alt">
+    <form method="post" action="#">
+      <input type="text" name="query" id="query" placeholder="Search" />
+    </form>
+  </section> -->
+
+  <!-- Sidebar Menu -->
+  <nav id="menu">
+    <header class="major">
+      <h2>Menu</h2>
+    </header>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li>
+        <span class="opener">Latest</span>
+        {% show_latest_posts 3 %}
+      </li>
+      <li>
+        <span class="opener">Popular</span>
+        {% get_most_commented_posts as most_commented_posts %}
+        <ul>
+          {% for post in most_commented_posts %}
+          <li>
+            <a href="{{post.get_absolute_url }}">{{ post.title }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Contact Me Section -->
+  <section>
+    <header class="major">
+      <h2>Just say Hi</h2>
+    </header>
+    <p>
+      I am interested to see who is this human that found this site and is
+      willing to chat about it.
+    </p>
+    <ul class="contact">
+      <li class="icon solid fa-envelope">
+        <a href="#">liu_yongliang@hotmail.com</a>
+      </li>
+      <li class="icon brands fa-linkedin-in">
+        <a href="https://www.linkedin.com/in/-yong-/" target="_blank"
+          >linkedin.com/in/-yong-/</a
+        >
+      </li>
+      <li class="icon brands fa-github">
+        <a href="https://tlylt.github.io/" target="_blank"
+          >tlylt.github.io/</a
+        >
+      </li>
+      <li class="icon solid fa-home">Singapore</li>
+    </ul>
+  </section>
+
+  <!-- Stats Section -->
+  <section>
+    <header class="major">
+      <h2>Stats</h2>
+    </header>
+    <div class="posts-stats">
+      <article>
+        <p>I've written {% total_posts %} posts so far.</p>
+        {% comment %} <p>
+          <a href="{% url 'blog:post_feed' %}">Subscribe to my RSS feed</a>
+        </p> {% endcomment %}
+      </article>
+    </div>
+    <div class="mini-posts">
+      <article>
+       <a class="image" id='sidebargif'><img src="https://media.giphy.com/media/d2TtVTrnHAiAg/giphy.gif" alt="" /></a>
+        <blockquote href="#" id='sidebarquote'>
+          Motivation is like taking a shower, you need it everyday.
+        </blockquote>
+      </article>
+    </div>
+    <!-- <ul class="actions">
+      <li><a href="#" class="button">More</a></li>
+    </ul> -->
+  </section>
+  
+  <!-- Footer -->
+  <footer id="footer">
+    <p class="copyright">
+      &copy; Yongliang. All rights reserved. Design courtesy of
+      <a href="https://html5up.net">HTML5 UP</a>.
+    </p>
+  </footer>
+</div>

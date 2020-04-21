@@ -1,0 +1,42 @@
+{% extends "base.html" %} 
+{% load blog_tags %}
+
+{% block title %}Yong 2020{% endblock %}
+
+{% block pagetopsection %}
+{% include "pagetopsection.html" %} 
+{% endblock %}
+
+<!-- Place your content view  -->
+{% block content %}
+
+{% for post in posts %}
+<h2>
+  <a href="{{ post.get_absolute_url }}">
+    {{ post.title }}
+  </a>
+</h2>
+<p class="date">
+  Published: {{ post.publish }} |
+  Tags: {% for tag in post.tags.all %}
+  <a href="{% url 'blog:post_list_by_tag' tag.slug %}">
+    {{ tag.name }}
+  </a>
+  {% if not forloop.last %},
+  {% endif %} 
+  {% endfor %}
+ 
+</p>
+{{ post.body|markdown|truncatewords_html:60 }} 
+<hr class="major" />
+{% endfor %}
+{% include "pagination.html" with page=posts %} 
+{% endblock %}
+
+<!-- Place your sidebar view  -->
+{% block sidebar %}
+{% include "sidebar.html" %} 
+{% endblock %}
+
+
+

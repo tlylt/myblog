@@ -1,0 +1,42 @@
+{% load blog_tags %} {% load static %}
+<!-- This will be base for both Home view and Post view -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Place your view title -->
+    <title>{% block title %}{% endblock %}</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+  </head>
+
+  <body class="is-preload">
+    <div id="wrapper">
+      <!-- Main -->
+      <div id="main">
+        <div class="inner">
+        <!-- Place your header view  -->
+        {% block pagetopsection %}{% endblock %}
+        <!-- Place your content view  -->
+        {% block content %}{% endblock %}
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div id="sidebar">
+        <!-- Place your sidebar view  -->
+        {% block sidebar %}{% endblock %}
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/js/browser.min.js' %}"></script>
+    <script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
+    <script src="{% static 'assets/js/util.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+  </body>
+</html>
