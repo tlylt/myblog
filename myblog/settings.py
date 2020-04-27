@@ -25,12 +25,12 @@ SECRET_KEY = 'do-$d4t%t@ij68^rrtux!5%(l%!&pl$2a*8hn91s*&hy_lz5#c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['54.169.151.108']
+ALLOWED_HOSTS = ['18.141.39.171']
 
 HAYSTACK_CONNECTIONS = {
-    'default':{
-        'ENGINE':'haystack.backends.solr_backend.SolrEngine',
-        'URL':'http://127.0.0.1:8983/solr/blog'
+    'default': {
+        'ENGINE': 'haystack.backends.solr_backend.SolrEngine',
+        'URL': 'http://127.0.0.1:8983/solr/blog'
     },
 }
 # Application definition
@@ -130,17 +130,17 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'static')
+    os.path.join(BASE_DIR, 'static')
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # This means /webapps/project/static in this case
 
 
-#Email settings
-#Either local SMTP server or the SMTP server of your email provider
-#e.g. using GMAIL
+# Email settings
+# Either local SMTP server or the SMTP server of your email provider
+# e.g. using GMAIL
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'your_account@gmail.com'
 EMAIL_HOST_PASSWORD = 'your_password'
 EMAIL_PORT = 587
-EMAIL_USE_TLS = True 
+EMAIL_USE_TLS = True
