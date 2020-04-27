@@ -25,7 +25,7 @@ SECRET_KEY = 'do-$d4t%t@ij68^rrtux!5%(l%!&pl$2a*8hn91s*&hy_lz5#c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['18.141.39.171']
+ALLOWED_HOSTS = ['18.141.39.171', 'localhost']
 
 HAYSTACK_CONNECTIONS = {
     'default': {
@@ -129,9 +129,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static')
+# ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # This means /webapps/project/static in this case
 
